@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Prontuário Home Care</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-page">
+  <section class="auth-card">
+    <img src="assets/logo.svg" alt="Logo Roberta Gomes Enfermeira Home Care" class="logo" />
+    <h1>Acesso ao sistema</h1>
+    <p>Entre para acessar o prontuário eletrônico.</p>
+
+    <form id="formLogin">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" required />
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" required />
+
+      <button type="submit" class="btn-principal">Entrar</button>
+    </form>
+
+    <div class="link-auth">
+      Não possui cadastro? <a href="cadastro.html">Criar usuário</a>
+    </div>
+  </section>
+
+  <script src="auth.js"></script>
+</body>
+</html>

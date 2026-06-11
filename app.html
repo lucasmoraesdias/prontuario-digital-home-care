@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prontuário Home Care</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="iniciarSistema()">
+  <header>
+    <div class="topo">
+      <img src="assets/logo.svg" alt="Logo Roberta Gomes Enfermeira Home Care" />
+      <div class="usuario">
+        <strong id="nomeLogado"></strong><br>
+        <button class="btn-neutro" onclick="sair()">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="aviso">
+      <strong>Atenção:</strong> este sistema é acadêmico e demonstrativo. Os dados ficam salvos apenas no navegador utilizado.
+      Para uso profissional real, seria necessário banco de dados seguro, criptografia, autenticação robusta e conformidade com a LGPD.
+    </div>
+
+    <section class="card">
+      <h2>Cadastro e evolução do paciente</h2>
+
+      <form id="formProntuario">
+        <input type="hidden" id="indiceEdicao" />
+
+        <div class="grid">
+          <div>
+            <label for="nome">Nome do paciente</label>
+            <input type="text" id="nome" required />
+          </div>
+
+          <div>
+            <label for="idade">Idade</label>
+            <input type="number" id="idade" min="0" required />
+          </div>
+
+          <div>
+            <label for="telefone">Contato familiar</label>
+            <input type="text" id="telefone" placeholder="Telefone ou WhatsApp" />
+          </div>
+
+          <div>
+            <label for="data">Data do atendimento</label>
+            <input type="date" id="data" required />
+          </div>
+        </div>
+
+        <label for="endereco">Endereço do atendimento</label>
+        <input type="text" id="endereco" />
+
+        <h2>Informações de saúde</h2>
+
+        <div class="grid">
+          <div>
+            <label for="pressao">Pressão arterial</label>
+            <input type="text" id="pressao" placeholder="Ex: 120x80 mmHg" />
+          </div>
+
+          <div>
+            <label for="glicemia">Glicemia</label>
+            <input type="text" id="glicemia" placeholder="Ex: 95 mg/dL" />
+          </div>
+
+          <div>
+            <label for="temperatura">Temperatura</label>
+            <input type="text" id="temperatura" placeholder="Ex: 36,5 °C" />
+          </div>
+
+          <div>
+            <label for="saturacao">Saturação</label>
+            <input type="text" id="saturacao" placeholder="Ex: 98%" />
+          </div>
+        </div>
+
+        <label for="medicacoes">Medicações em uso</label>
+        <textarea id="medicacoes" placeholder="Informe as medicações, horários e observações"></textarea>
+
+        <label for="evolucao">Evolução do atendimento</label>
+        <textarea id="evolucao" placeholder="Descreva a evolução, cuidados realizados e orientações"></textarea>
+
+        <label for="observacoes">Observações gerais</label>
+        <textarea id="observacoes" placeholder="Outras informações importantes"></textarea>
+
+        <div class="botoes">
+          <button type="submit" class="btn-principal" style="width:auto;">Salvar registro</button>
+          <button type="button" class="btn-secundario" onclick="novoRegistro()">Novo registro</button>
+          <button type="button" class="btn-secundario" onclick="exportarDados()">Exportar dados</button>
+          <button type="button" class="btn-alerta" onclick="limparTudo()">Apagar todos os registros</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Registros salvos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Paciente</th>
+            <th>Data</th>
+            <th>Sinais vitais</th>
+            <th>Evolução</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="listaRegistros"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    Projeto acadêmico de extensão - Sistemas de Informação e Sociedade
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

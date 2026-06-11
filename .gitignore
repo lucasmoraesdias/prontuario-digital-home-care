@@ -1,0 +1,7 @@
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Exportações locais de prontuários
+prontuarios_homecare.json
+*.json
